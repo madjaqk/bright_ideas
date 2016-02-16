@@ -1,0 +1,19 @@
+<a href="/bright_ideas">Bright Ideas</a>
+<table>
+	<tr>
+		<td><a href="/users/<%= @idea.user.id %>"><%= @idea.user.alias %></a> says...</td>
+		<td class="idea" colspan=2><%= @idea.content %></td>
+	</tr>
+</table>
+
+<h2>People who liked this idea:</h2>
+<table>
+	<tr><th>Alias</th>
+		<th>Name</th>
+	</tr>
+	<% @likers.each do |user| %>
+		<tr><td><a href="/users/<%= user.user_id %>"><%= user.alias %></a></td>
+			<td><%= user.name %></td>
+		</tr>
+	<% end %>
+</table>
